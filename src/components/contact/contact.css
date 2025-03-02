@@ -1,0 +1,24 @@
+@keyframes moveRocket {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(300px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.moving-rocket {
+  animation: moveRocket 8s ease-in-out infinite;
+}
+
+.prism-effect {
+  background: rgba( 255, 255, 255, 0.05 );
+
+  backdrop-filter: blur(0.5px );
+  -webkit-backdrop-filter: blur( 0.5px );
+  border-radius: 10px;
+
+}

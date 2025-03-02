@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  background-color: #030014;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  cursor: url('/public/cursor.png') 8 8, auto; /* Custom cursor with hot spot at 16, 16 */
+}
+
+
+@font-face {
+  font-family: FuturaTS-DemiBold;
+  src: url(/public/FuturaTS-DemiBold.ttf);
+}
+
+
+/* Apply the custom cursor to all elements (including hover states) */
+*, *::before, *::after {
+  cursor: url('/public/cursor.png') 8 8, auto !important; /* Custom cursor on all elements */
+}
+
+/* Prevent default hand pointer on clickable elements */
+a, button, .clickable, input, textarea {
+  cursor: url('/public/cursor.png') 8 8, auto !important; /* Force custom cursor */
+}
+
+/* Custom scrollbar styling for WebKit browsers (Chrome, Safari) */
+body::-webkit-scrollbar {
+  width: 20px !important; /* Adjust scrollbar width */
+}
+
+body::-webkit-scrollbar-track {
+  background: #1e1e1e !important; /* Background color of the scrollbar track */
+  border-radius: 10px !important; /* Rounded corners for the track */
+}
+
+body::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #1e1e1e, #3b82f6) !important; /* Gradient from dark to light */
+  border-radius: 10px !important; /* Rounded corners for the thumb */
+  border: 3px solid #1e1e1e !important; /* Adds padding and a border around the thumb */
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #3b82f6, #1e1e1e) !important; /* Gradient when hovering */
+}
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+    --color-1: 0 100% 63%;
+    --color-2: 270 100% 63%;
+    --color-3: 210 100% 63%;
+    --color-4: 195 100% 63%;
+    --color-5: 90 100% 63%;
+  }
+  .dark {
+    --color-1: 0 100% 63%;
+    --color-2: 270 100% 63%;
+    --color-3: 210 100% 63%;
+    --color-4: 195 100% 63%;
+    --color-5: 90 100% 63%;
+  }
+}
+
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%; /* Start from the left */
+  }
+  100% {
+    background-position: 100% 50%; /* Move to the right */
+  }
+}
